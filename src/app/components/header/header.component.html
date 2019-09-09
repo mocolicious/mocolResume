@@ -1,11 +1,17 @@
-<header>
-  <ul>
-    <li>
-      <a [routerLink]="['/']">
-          <h1>My Store</h1>
+<Section class="header-section" title="Header">
+  <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Mono:300&amp;display=swap');
+  </style>
+  <style>
+      @import url('https://fonts.googleapis.com/icon?family=Material+Icons&amp;display=block');
+  </style> 
+  <header>
+    <nav>
+      <a mat-button [routerLink]="['/']">
+          <h1>Andrew Mocol</h1>
       </a>  
-    </li>
-    <li><a [routerLink="['/resume']"]>resume</a></li>
-    <li><a [routerLink="['/open-source']"]>open source</a></li>
-</ul>
-</header>
+      <a mat-button [routerLink]="['/resume']">Resume</a>
+      <a mat-button [routerLink]="['/open-source']">Open Source</a>
+    </nav>
+  </header>
+</Section>
