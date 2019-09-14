@@ -14,7 +14,10 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
-import { A11yModule } from '@angular/cdk/a11y/typings'
+import { A11yModule } from '@angular/cdk/a11y/typings';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,15 @@ import { A11yModule } from '@angular/cdk/a11y/typings'
     A11yModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatButtonModule
+    FontAwesomeModule,
+    MatButtonModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
