@@ -1,3 +1,9 @@
 export const environment = {
-  production: true
+  production: true,
+  githubApiEndpoint: 'placeholder',
+  githubClientId: 'placeholder',
+  githubClintSecret: 'placeholder',
+  linkedinApiEndpoint: 'placeholder',
+  linkedinClientId: 'placeholder',
+  linkedinClientSecret: 'placeholder'
 };
