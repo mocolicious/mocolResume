@@ -11,6 +11,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './store/reducers';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ComponentModule } from './modules/component/component.module';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,10 +24,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     GraphQLModule,
     HttpClientModule,
+    ComponentModule,
     BrowserAnimationsModule,
     MatMenuModule,
     FontAwesomeModule,
     MatButtonModule,
+    RouterModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -33,6 +39,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, HeaderComponent, FooterComponent]
 })
 export class AppModule { }
