@@ -7,6 +7,8 @@ import { HomeComponent } from 'src/app/views/home/home.component';
 import { ResumeComponent } from 'src/app/views/resume/resume.component';
 import { OpenSourceComponent } from 'src/app/views/open-source/open-source.component';
 import { PageNotFoundComponent } from 'src/app/views/page-not-found/page-not-found.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -21,7 +23,9 @@ import { PageNotFoundComponent } from 'src/app/views/page-not-found/page-not-fou
     PageNotFoundComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule,
+    RouterModule
   ]
 })
 export class ComponentModule { }
