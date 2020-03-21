@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "mocolResume"
+  "defaultProject": "mocolResume",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
