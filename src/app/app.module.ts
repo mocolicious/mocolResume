@@ -22,6 +22,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { BusyInterceptor } from './interceptors/busy.interceptor';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { httpInterceptorProviders } from './interceptors';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { httpInterceptorProviders } from './interceptors';
     }),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    StoreRouterConnectingModule.forRoot()
+    StoreRouterConnectingModule.forRoot(),
+    ScullyLibModule
   ],
   providers: [
     httpInterceptorProviders
