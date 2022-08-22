@@ -18,7 +18,7 @@ steps:
 - script: |
     npm install --location=global @angular/cli@latest
     npm install --force
-    ng build --prod
+    ng build --configuration=production
   displayName: 'npm install and build'
 
 - task: PublishBuildArtifacts@1
