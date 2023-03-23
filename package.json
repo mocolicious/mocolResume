@@ -35,13 +35,13 @@
     "@scullyio/init": "2.1.36",
     "@scullyio/ng-lib": "2.1.36",
     "@scullyio/scully": "2.1.36",
-    "apollo-angular": "^4.0.1",
+    "apollo-angular": "^4.2.1",
     "bootstrap": "^4.5.3",
     "graphql": "^16.6.0",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4",
-    "@apollo/client": "^3.6.9"
+    "@apollo/client": "^3.7.10"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.4",
