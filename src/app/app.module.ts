@@ -46,7 +46,7 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
       }
     }),
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production , connectInZone: true}),
     StoreRouterConnectingModule.forRoot(),
     ScullyLibModule
   ],
