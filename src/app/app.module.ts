@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +22,6 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { BusyInterceptor } from './interceptors/busy.interceptor';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { httpInterceptorProviders } from './interceptors';
-import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,6 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     AppRoutingModule,
     GraphQLModule,
     HttpClientModule,
-    ComponentModule,
     BrowserAnimationsModule,
     MatMenuModule,
     FontAwesomeModule,
@@ -48,10 +46,10 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production , connectInZone: true}),
     StoreRouterConnectingModule.forRoot(),
-    ScullyLibModule
   ],
   providers: [
-    httpInterceptorProviders
+    httpInterceptorProviders,
+    provideClientHydration()
   ],
   bootstrap: [AppComponent, HeaderComponent, FooterComponent]
 })

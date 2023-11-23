@@ -9,7 +9,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "scully": "scully",
-    "scully:serve": "scully serve"
+    "scully:serve": "scully serve",
+    "dev:ssr": "ng run mocolResume:serve-ssr",
+    "serve:ssr": "node dist/mocolResume/server/main.js",
+    "build:ssr": "ng build && ng run mocolResume:server",
+    "prerender": "ng run mocolResume:prerender"
   },
   "private": true,
   "dependencies": {
@@ -37,11 +41,11 @@
     "@scullyio/scully": "2.1.41",
     "apollo-angular": "^5.0.2",
     "bootstrap": "^4.5.3",
+    "express": "^4.18.2",
     "graphql": "^16.8.1",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
-    "zone.js": "~0.14.2",
-    "@apollo/client": "^3.8.7"
+    "zone.js": "~0.14.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.0.2",

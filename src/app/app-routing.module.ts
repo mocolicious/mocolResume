@@ -7,9 +7,9 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
 
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'resume', component: ResumeComponent },
-    { path: 'open-source', component: OpenSourceComponent },
+    { path: '', loadComponent: () => import('./views/home/home.component').then(c => c.HomeComponent) },
+    { path: 'resume', loadComponent: () => import('./views/resume/resume.component').then(c => c.ResumeComponent) },
+    { path: 'open-source', loadComponent: () => import('./views/open-source/open-source.component').then(c => c.OpenSourceComponent)},
     { path: '**', component: PageNotFoundComponent }
 ];
 
