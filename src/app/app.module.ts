@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatButtonModule } from '@angular/material/button';
+import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './store/reducers';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -22,7 +22,6 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { BusyInterceptor } from './interceptors/busy.interceptor';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { httpInterceptorProviders } from './interceptors';
-import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,6 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     AppRoutingModule,
     GraphQLModule,
     HttpClientModule,
-    ComponentModule,
     BrowserAnimationsModule,
     MatMenuModule,
     FontAwesomeModule,
@@ -46,12 +44,12 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
       }
     }),
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production , connectInZone: true}),
     StoreRouterConnectingModule.forRoot(),
-    ScullyLibModule
   ],
   providers: [
-    httpInterceptorProviders
+    httpInterceptorProviders,
+    provideClientHydration()
   ],
   bootstrap: [AppComponent, HeaderComponent, FooterComponent]
 })
