@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GraphQLModule } from './graphql.module';
+// import { GraphQLModule } from './graphql.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';
@@ -29,7 +29,7 @@ import { httpInterceptorProviders } from './interceptors';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GraphQLModule,
+    // GraphQLModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatMenuModule,
