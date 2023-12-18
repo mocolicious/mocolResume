@@ -19,7 +19,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { BusyInterceptor } from './interceptors/busy.interceptor';
+// import { BusyInterceptor } from './interceptors/busy.interceptor';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { httpInterceptorProviders } from './interceptors';
 
@@ -51,6 +51,6 @@ import { httpInterceptorProviders } from './interceptors';
     httpInterceptorProviders,
     provideClientHydration()
   ],
-  bootstrap: [AppComponent, HeaderComponent, FooterComponent]
+  bootstrap: [AppComponent, HeaderComponent]
 })
 export class AppModule { }
