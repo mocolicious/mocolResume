@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class FilterForksPipe implements PipeTransform {
   transform(repos: any[]): any[] {
-    return repos.filter(repo => repo.fork);
+    return repos.filter(repo => repo.fork).sort((a, b) => b.stargazers_count - a.stargazers_count);
   }
 }
 
@@ -16,6 +16,6 @@ export class FilterForksPipe implements PipeTransform {
 })
 export class FilterOriginalsPipe implements PipeTransform {
   transform(repos: any[]): any[] {
-    return repos.filter(repo => !repo.fork);
+    return repos.filter(repo => !repo.fork).sort((a, b) => b.stargazers_count - a.stargazers_count);
   }
 }

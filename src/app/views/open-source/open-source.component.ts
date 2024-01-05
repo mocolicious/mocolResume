@@ -40,6 +40,30 @@ export class OpenSourceComponent implements OnInit {
     // );
   }
 
+  getContributionsData() {
+    const allContributions = {};
+
+    this.githubStuff.forEach(repo => {
+      for (const [date, count] of Object.entries(repo.commitCountByDate || {})) {
+        if (allContributions[date]) {
+          allContributions[date] += count;
+        } else {
+          allContributions[date] = count;
+        }
+      }
+    });
+
+    // Convert the 'allContributions' object into an array and sort by date
+    const contributionsArray = Object.keys(allContributions).map(date => ({
+      date: date,
+      count: allContributions[date]
+    }));
+
+    contributionsArray.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+    return contributionsArray;
+  }
+
   ngOnDestroy(): void {
     console.log('ng destroy of common');
 
