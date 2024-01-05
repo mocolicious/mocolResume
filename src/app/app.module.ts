@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 // import { GraphQLModule } from './graphql.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './store/reducers';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -19,7 +19,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { BusyInterceptor } from './interceptors/busy.interceptor';
+// import { BusyInterceptor } from './interceptors/busy.interceptor';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { httpInterceptorProviders } from './interceptors';
 
@@ -51,6 +51,6 @@ import { httpInterceptorProviders } from './interceptors';
     httpInterceptorProviders,
     provideClientHydration()
   ],
-  bootstrap: [AppComponent, HeaderComponent, FooterComponent]
+  bootstrap: [AppComponent, HeaderComponent]
 })
 export class AppModule { }
