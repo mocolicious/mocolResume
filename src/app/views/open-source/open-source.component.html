@@ -1,14 +1,27 @@
 <section title="Open Source">
-    <!-- <header>
-        <h2>Open Source Projects</h2>
-        <h4>Some of the projects I was the creator or a large contributor on.</h4>
-    </header>
-    <article>
-    </article> -->
-    <br />
-    <div>
-        <h2 style="margin: 1em;">Check out <a href="https://github.com/mocolicious">My Github</a></h2>
+    <div style="margin: 1em;">
+        <!-- <header>
+            <h2>Open Source Projects</h2>
+            <h4>Some of the projects I was the creator or a large contributor on.</h4>
+        </header>
+        <article>
+        </article> -->
+        <br />
+        <div>
+            <h2 style="margin: 1em;">Check out <a href="https://github.com/mocolicious">My Github</a></h2>
+        </div>
+        <!-- {{githubStuff | json}} -->
+
+        <div>
+            <h3>Original Projects</h3>
+            <ul style="list-style-type: none;">
+                <li *ngFor="let item of githubStuff | filterOriginals">{{item.name}} - {{item.description ?? 'N/A'}}</li>
+            </ul>
+            <h3>Forks</h3>
+            <ul style="list-style-type: none;">
+                <li *ngFor="let item of githubStuff | filterForks">{{item.name}} - {{item.description ?? 'N/A'}}</li>
+            </ul>
+        </div>
     </div>
-    {{githubStuff | json}}
 </section>
 
