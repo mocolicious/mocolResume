@@ -16,6 +16,6 @@ export class GithubService {
   }
 
   getRepos() {
-    return this.http.get(`${this.githubURL}/users/${environment.githubName}/repos?sort=created&per_page=5`);
+    return this.http.get(`${this.githubURL}/users/${environment.githubName}/repos?sort=created&per_page=50`);
   }
 }

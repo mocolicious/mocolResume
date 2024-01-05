@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { GithubService } from 'src/app/services/github.service';
+import { FilterForksPipe, FilterOriginalsPipe } from 'src/app/pipes/github-filters';
 
 @Component({
   selector: 'app-open-source',
   standalone: true,
-  imports: [ CommonModule ],
+  imports: [ CommonModule, FilterForksPipe, FilterOriginalsPipe ],
   templateUrl: './open-source.component.html',
   styleUrls: ['./open-source.component.scss']
 })
