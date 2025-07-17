@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { GraphQLModule } from './graphql.module';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,34 +23,26 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { httpInterceptorProviders } from './interceptors';
 
-@NgModule({
-  declarations: [
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    // GraphQLModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatMenuModule,
-    FontAwesomeModule,
-    MatButtonModule,
-    RouterModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
-      }
-    }),
-    EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production , connectInZone: true}),
-    StoreRouterConnectingModule.forRoot(),
-  ],
-  providers: [
-    httpInterceptorProviders,
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent, HeaderComponent]
-})
+@NgModule({ declarations: [],
+    bootstrap: [AppComponent, HeaderComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatMenuModule,
+        FontAwesomeModule,
+        MatButtonModule,
+        RouterModule,
+        StoreModule.forRoot(reducers, {
+            metaReducers,
+            runtimeChecks: {
+                strictStateImmutability: true,
+                strictActionImmutability: true
+            }
+        }),
+        EffectsModule.forRoot([]),
+        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production, connectInZone: true }),
+        StoreRouterConnectingModule.forRoot()], providers: [
+        httpInterceptorProviders,
+        provideClientHydration(),
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }
