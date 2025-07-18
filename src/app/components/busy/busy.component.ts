@@ -3,9 +3,10 @@ import { Observable } from 'rxjs';
 import { BusyService } from 'src/app/services/busy.service';
 
 @Component({
-  selector: 'app-busy',
-  templateUrl: './busy.component.html',
-  styleUrls: ['./busy.component.scss']
+    selector: 'app-busy',
+    templateUrl: './busy.component.html',
+    styleUrls: ['./busy.component.scss'],
+    standalone: false
 })
 export class BusyComponent implements OnInit {
 

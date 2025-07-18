@@ -6,11 +6,10 @@ import { GithubService } from 'src/app/services/github.service';
 import { FilterForksPipe, FilterOriginalsPipe } from 'src/app/pipes/github-filters';
 
 @Component({
-  selector: 'app-open-source',
-  standalone: true,
-  imports: [ CommonModule, FilterForksPipe, FilterOriginalsPipe ],
-  templateUrl: './open-source.component.html',
-  styleUrls: ['./open-source.component.scss']
+    selector: 'app-open-source',
+    imports: [CommonModule, FilterForksPipe, FilterOriginalsPipe],
+    templateUrl: './open-source.component.html',
+    styleUrls: ['./open-source.component.scss']
 })
 export class OpenSourceComponent implements OnInit {
 
