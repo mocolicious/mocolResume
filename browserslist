@@ -2,11 +2,25 @@
 # For additional information regarding the format and rule options, please see:
 # https://github.com/browserslist/browserslist#queries
 
+# Angular 19 browser support requirements
 # You can see what browsers were selected by your queries by running:
 #   npx browserslist
 
-> 0.5%
-last 2 versions
+last 2 Chrome versions
+last 1 Firefox version
+last 2 Edge versions
+last 2 Safari versions
+last 2 iOS versions
 Firefox ESR
 not dead
-not IE 9-11 # For IE 9-11 support, remove 'not'.
+not IE 9-11
+not Android 4.4.3-4.4.4
+not ios_saf < 12
+not and_chr < 90
+not and_ff < 90
+not and_qq < 14
+not and_uc < 15
+not kaios < 3.2
+not op_mini all
+not op_mob < 80
+not samsung < 26
