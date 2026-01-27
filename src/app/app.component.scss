@@ -1,15 +1,1 @@
-main {
-    position: relative;
-    z-index: 1;
-    display: block;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 64px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-}
+/* Styles moved to Tailwind classes in component template */
