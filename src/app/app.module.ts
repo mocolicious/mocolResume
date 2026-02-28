@@ -24,13 +24,14 @@ import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { httpInterceptorProviders } from './interceptors';
 
 @NgModule({ declarations: [],
-    bootstrap: [AppComponent, HeaderComponent], imports: [BrowserModule,
+    bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         MatMenuModule,
         FontAwesomeModule,
         MatButtonModule,
         RouterModule,
+        ComponentModule,
         StoreModule.forRoot(reducers, {
             metaReducers,
             runtimeChecks: {

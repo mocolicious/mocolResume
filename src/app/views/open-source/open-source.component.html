@@ -1,31 +1,47 @@
-<section title="Open Source">
-  <div class="m-4">
-    <!-- <header>
-    <h2>Open Source Projects</h2>
-    <h4>Some of the projects I was the creator or a large contributor on.</h4>
-  </header>
-  <article>
-  </article> -->
-  <br />
-  <div>
-    <h2 class="m-4">Check out <a href="https://github.com/mocolicious">My Github</a></h2>
-  </div>
-  <!-- {{githubStuff | json}} -->
+<div class="max-w-5xl mx-auto py-8 px-4">
 
-  <div>
-    <h3>Original Projects</h3>
-    <ul class="list-none">
+  <!-- Header -->
+  <div class="bg-white rounded-xl shadow-md p-6 mb-6 flex items-center gap-4">
+    <div>
+      <h1 class="text-3xl font-bold text-gray-800 mb-1">Open Source Portfolio</h1>
+      <p class="text-gray-500">
+        Check out all my projects on
+        <a href="https://github.com/mocolicious" class="text-primary font-semibold hover:underline">GitHub &#8599;</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Original Projects -->
+  <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-primary pb-2 mb-4">Original Projects</h2>
+    <ul class="divide-y divide-gray-100">
       @for (item of githubStuff | filterOriginals; track item) {
-        <li>{{item.name}} - {{item.description ?? 'N/A'}}</li>
-      }
-    </ul>
-    <h3>Forks</h3>
-    <ul class="list-none">
-      @for (item of githubStuff | filterForks; track item) {
-        <li>{{item.name}} - {{item.description ?? 'N/A'}}</li>
+        <li class="py-3 flex items-start gap-3">
+          <span class="mt-1 w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>
+          <div>
+            <span class="font-semibold text-gray-800">{{item.name}}</span>
+            <span class="text-gray-500 text-sm ml-2">— {{item.description ?? 'No description'}}</span>
+          </div>
+        </li>
       }
     </ul>
   </div>
+
+  <!-- Forks -->
+  <div class="bg-white rounded-xl shadow-md p-6">
+    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4">Forks</h2>
+    <ul class="divide-y divide-gray-100">
+      @for (item of githubStuff | filterForks; track item) {
+        <li class="py-3 flex items-start gap-3">
+          <span class="mt-1 w-2 h-2 bg-gray-400 rounded-full flex-shrink-0"></span>
+          <div>
+            <span class="font-semibold text-gray-800">{{item.name}}</span>
+            <span class="text-gray-500 text-sm ml-2">— {{item.description ?? 'No description'}}</span>
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+
 </div>
-</section>
 
