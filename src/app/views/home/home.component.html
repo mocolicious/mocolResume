@@ -1,57 +1,104 @@
-<section>
-  <div class="flex flex-col md:flex-row mx-auto my-4 shadow-sm mb-[1.6%] bg-white leading-normal font-sans rounded overflow-hidden z-0 hover:[&_.photo]:scale-[1.3] hover:[&_.photo]:rotate-[3deg]">
-    <div class="relative z-0 h-[200px] md:flex-[40%] md:h-auto">
-      <div class="photo absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center transition-transform duration-200" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-blue-700 via-primary to-blue-500 text-white py-20 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <h1 class="text-5xl font-bold mb-4 tracking-tight">Andrew Mocol</h1>
+    <p class="text-xl font-light text-blue-100 mb-6">Principal Software Engineer &bull; Full Stack &bull; Platform &bull; Web3</p>
+    <div class="flex flex-wrap justify-center gap-3 mt-6">
+      <a [routerLink]="['/resume']" class="bg-white text-primary font-semibold px-6 py-2 rounded-full hover:bg-blue-50 transition-colors shadow-md no-underline">View Resume</a>
+      <a [routerLink]="['/open-source']" class="border-2 border-white text-white font-semibold px-6 py-2 rounded-full hover:bg-white hover:text-primary transition-colors no-underline">Open Source</a>
     </div>
-    <div class="p-4 bg-white relative z-[1] md:flex-[60%] md:before:transform md:before:skew-x-[-3deg] md:before:content-[''] md:before:bg-white md:before:w-[30px] md:before:absolute md:before:left-[-10px] md:before:top-0 md:before:bottom-0 md:before:z-[-1]">
-      <h1 class="font-[Poppins,sans-serif] leading-none m-0 text-[1.7rem]">Read my Resume</h1>
-      <h2 class="font-[Poppins,sans-serif] text-base font-light uppercase text-[#a2a2a2] mt-[5px]">If you fancy you some reading</h2>
-      <p class="relative mt-4 first:mt-5 first:min-h-[10em] first:before:content-[''] first:before:absolute first:before:h-[5px] first:before:bg-primary first:before:w-[35px] first:before:top-[-0.75rem] first:before:rounded"> Check out the stuff I've done over my career.</p>
-      <p class="read-more text-right">
-        <a [routerLink]="['/resume']" class="text-primary inline-block relative after:content-['\f061'] after:font-['FontAwesome'] after:ml-[-10px] after:opacity-0 after:align-middle after:transition-[margin_0.3s,opacity_0.3s] hover:after:ml-[5px] hover:after:opacity-100">Read More</a>
+  </div>
+</section>
+
+<!-- Cards Section -->
+<section class="max-w-5xl mx-auto py-10 px-4 grid gap-6">
+
+  <!-- Card 1: Resume -->
+  <div class="flex flex-col md:flex-row rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow group">
+    <div class="relative md:w-2/5 h-52 md:h-auto overflow-hidden">
+      <div class="photo absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+           style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+      <div class="absolute inset-0 bg-primary/20"></div>
+    </div>
+    <div class="p-6 md:w-3/5 flex flex-col justify-between">
+      <div>
+        <span class="inline-block bg-blue-100 text-primary text-xs font-semibold px-2 py-1 rounded mb-3 uppercase tracking-wide">Career</span>
+        <h2 class="text-2xl font-bold text-gray-800 mb-1">Read my Resume</h2>
+        <p class="text-sm text-gray-400 mb-3 uppercase tracking-wide">15+ Years of Engineering Leadership</p>
+        <p class="text-gray-600 text-sm leading-relaxed">Check out my work history, skills, certifications and accomplishments over a 15+ year career in software engineering.</p>
+      </div>
+      <p class="mt-4">
+        <a [routerLink]="['/resume']" class="inline-flex items-center text-primary font-semibold text-sm hover:underline no-underline">
+          Read More <span class="ml-1">&rarr;</span>
+        </a>
       </p>
     </div>
   </div>
-  
-  <div class="flex flex-col md:flex-row-reverse mx-auto my-4 shadow-sm mb-[1.6%] bg-white leading-normal font-sans rounded overflow-hidden z-0 hover:[&_.photo]:scale-[1.3] hover:[&_.photo]:rotate-[3deg]">
-    <div class="relative z-0 h-[200px] md:flex-[40%] md:h-auto">
-      <div class="photo absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center transition-transform duration-200" style="background-image: url(https://en.eipss-eg.org/wp-content/uploads/2017/10/%D8%A7%D9%84%D9%84%D8%A7%D9%85%D8%B1%D9%83%D8%B2%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%AD%D9%83%D9%85-%D8%A7%D9%84%D9%85%D9%81%D8%A7%D9%87%D9%8A%D9%85-%D9%88%D8%A7%D9%84%D8%A3%D9%86%D9%85%D8%A7%D8%B7-min-780x405.jpg)"></div>
+
+  <!-- Card 2: Decentralized Governance -->
+  <div class="flex flex-col md:flex-row-reverse rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow group">
+    <div class="relative md:w-2/5 h-52 md:h-auto overflow-hidden">
+      <div class="photo absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+           style="background-image: url(https://en.eipss-eg.org/wp-content/uploads/2017/10/%D8%A7%D9%84%D9%84%D8%A7%D9%85%D8%B1%D9%83%D8%B2%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%AD%D9%83%D9%85-%D8%A7%D9%84%D9%85%D9%81%D8%A7%D9%87%D9%8A%D9%85-%D9%88%D8%A7%D9%84%D8%A3%D9%86%D9%85%D8%A7%D8%B7-min-780x405.jpg)"></div>
+      <div class="absolute inset-0 bg-indigo-500/20"></div>
     </div>
-    <div class="p-4 bg-white relative z-[1] md:flex-[60%] md:before:transform md:before:skew-x-[3deg] md:before:content-[''] md:before:bg-white md:before:w-[30px] md:before:absolute md:before:right-[-10px] md:before:top-0 md:before:bottom-0 md:before:z-[-1]">
-      <h1 class="font-[Poppins,sans-serif] leading-none m-0 text-[1.7rem]">Check out my article on Decentralized Governance</h1>
-      <h2 class="font-[Poppins,sans-serif] text-base font-light uppercase text-[#a2a2a2] mt-[5px]">I believe that Blockchain is about ideas</h2>
-      <p class="relative mt-4 first:mt-5 first:min-h-[10em] first:before:content-[''] first:before:absolute first:before:h-[5px] first:before:bg-primary first:before:w-[35px] first:before:top-[-0.75rem] first:before:rounded">Earlier this year I wrote some ideas I had for the Kin Ecosystem as to a path forward by generating a community driven governance system.</p>
-      <p class="read-more text-right">
-        <a href="https://kinprotocol.substack.com/p/introducing-the-kin-protocol-a-new" class="text-primary inline-block relative after:content-['\f061'] after:font-['FontAwesome'] after:ml-[-10px] after:opacity-0 after:align-middle after:transition-[margin_0.3s,opacity_0.3s] hover:after:ml-[5px] hover:after:opacity-100">Read More</a>
+    <div class="p-6 md:w-3/5 flex flex-col justify-between">
+      <div>
+        <span class="inline-block bg-indigo-100 text-indigo-700 text-xs font-semibold px-2 py-1 rounded mb-3 uppercase tracking-wide">Blockchain</span>
+        <h2 class="text-2xl font-bold text-gray-800 mb-1">Decentralized Governance</h2>
+        <p class="text-sm text-gray-400 mb-3 uppercase tracking-wide">Blockchain is about ideas</p>
+        <p class="text-gray-600 text-sm leading-relaxed">Earlier this year I wrote some ideas I had for the Kin Ecosystem as to a path forward by generating a community driven governance system.</p>
+      </div>
+      <p class="mt-4">
+        <a href="https://kinprotocol.substack.com/p/introducing-the-kin-protocol-a-new" class="inline-flex items-center text-primary font-semibold text-sm hover:underline no-underline">
+          Read More <span class="ml-1">&rarr;</span>
+        </a>
       </p>
     </div>
   </div>
-  
-  <div class="flex flex-col md:flex-row mx-auto my-4 shadow-sm mb-[1.6%] bg-white leading-normal font-sans rounded overflow-hidden z-0 hover:[&_.photo]:scale-[1.3] hover:[&_.photo]:rotate-[3deg]">
-    <div class="relative z-0 h-[200px] md:flex-[40%] md:h-auto">
-      <div class="photo absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center transition-transform duration-200" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"></div>
+
+  <!-- Card 3: Open Source -->
+  <div class="flex flex-col md:flex-row rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow group">
+    <div class="relative md:w-2/5 h-52 md:h-auto overflow-hidden">
+      <div class="photo absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+           style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"></div>
+      <div class="absolute inset-0 bg-green-500/20"></div>
     </div>
-    <div class="p-4 bg-white relative z-[1] md:flex-[60%] md:before:transform md:before:skew-x-[-3deg] md:before:content-[''] md:before:bg-white md:before:w-[30px] md:before:absolute md:before:left-[-10px] md:before:top-0 md:before:bottom-0 md:before:z-[-1]">
-      <h1 class="font-[Poppins,sans-serif] leading-none m-0 text-[1.7rem]">Check out my open source portfolio</h1>
-      <h2 class="font-[Poppins,sans-serif] text-base font-light uppercase text-[#a2a2a2] mt-[5px]">Follow me on Github</h2>
-      <p class="relative mt-4 first:mt-5 first:min-h-[10em] first:before:content-[''] first:before:absolute first:before:h-[5px] first:before:bg-primary first:before:w-[35px] first:before:top-[-0.75rem] first:before:rounded"> See my open source stuff.</p>
-      <p class="read-more text-right">
-        <a [routerLink]="['/open-source']" class="text-primary inline-block relative after:content-['\f061'] after:font-['FontAwesome'] after:ml-[-10px] after:opacity-0 after:align-middle after:transition-[margin_0.3s,opacity_0.3s] hover:after:ml-[5px] hover:after:opacity-100">Read More</a>
+    <div class="p-6 md:w-3/5 flex flex-col justify-between">
+      <div>
+        <span class="inline-block bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded mb-3 uppercase tracking-wide">Open Source</span>
+        <h2 class="text-2xl font-bold text-gray-800 mb-1">Open Source Portfolio</h2>
+        <p class="text-sm text-gray-400 mb-3 uppercase tracking-wide">Follow me on Github</p>
+        <p class="text-gray-600 text-sm leading-relaxed">See my open source contributions, original projects, and forks on GitHub.</p>
+      </div>
+      <p class="mt-4">
+        <a [routerLink]="['/open-source']" class="inline-flex items-center text-primary font-semibold text-sm hover:underline no-underline">
+          Read More <span class="ml-1">&rarr;</span>
+        </a>
       </p>
     </div>
   </div>
-  
-  <div class="flex flex-col md:flex-row-reverse mx-auto my-4 shadow-sm mb-[1.6%] bg-white leading-normal font-sans rounded overflow-hidden z-0 hover:[&_.photo]:scale-[1.3] hover:[&_.photo]:rotate-[3deg]">
-    <div class="relative z-0 h-[200px] md:flex-[40%] md:h-auto">
-      <div class="photo absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center transition-transform duration-200" style="background-image: url(https://assets.website-files.com/58a33365dba0da6e3182e714/5ecd81c24a7f32ef946c1ca6_Podcasting-Feat.jpg)"></div>
+
+  <!-- Card 4: Podcast -->
+  <div class="flex flex-col md:flex-row-reverse rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow group">
+    <div class="relative md:w-2/5 h-52 md:h-auto overflow-hidden">
+      <div class="photo absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+           style="background-image: url(https://assets.website-files.com/58a33365dba0da6e3182e714/5ecd81c24a7f32ef946c1ca6_Podcasting-Feat.jpg)"></div>
+      <div class="absolute inset-0 bg-purple-500/20"></div>
     </div>
-    <div class="p-4 bg-white relative z-[1] md:flex-[60%] md:before:transform md:before:skew-x-[3deg] md:before:content-[''] md:before:bg-white md:before:w-[30px] md:before:absolute md:before:right-[-10px] md:before:top-0 md:before:bottom-0 md:before:z-[-1]">
-      <h1 class="font-[Poppins,sans-serif] leading-none m-0 text-[1.7rem]">Listen to my podcast appearances</h1>
-      <h2 class="font-[Poppins,sans-serif] text-base font-light uppercase text-[#a2a2a2] mt-[5px]">Check out the ideas I've shared publicly</h2>
-      <p class="relative mt-4 first:mt-5 first:min-h-[10em] first:before:content-[''] first:before:absolute first:before:h-[5px] first:before:bg-primary first:before:w-[35px] first:before:top-[-0.75rem] first:before:rounded">I've appeared on several episodes of The Kin Show including most recently a roundtable discussion I organized with Kik Messenger Founder Ted Livingston and Sacred Finance CTO Will Gikandi.</p>
-      <p class="read-more text-right">
-        <a href="https://www.thekinshow.com/episodes/episode/7a90abe6/017-moving-forward-and-next-steps-ted-livingston-will-gikandi-and-andrew-mocol" class="text-primary inline-block relative after:content-['\f061'] after:font-['FontAwesome'] after:ml-[-10px] after:opacity-0 after:align-middle after:transition-[margin_0.3s,opacity_0.3s] hover:after:ml-[5px] hover:after:opacity-100">Read More</a>
+    <div class="p-6 md:w-3/5 flex flex-col justify-between">
+      <div>
+        <span class="inline-block bg-purple-100 text-purple-700 text-xs font-semibold px-2 py-1 rounded mb-3 uppercase tracking-wide">Podcast</span>
+        <h2 class="text-2xl font-bold text-gray-800 mb-1">Podcast Appearances</h2>
+        <p class="text-sm text-gray-400 mb-3 uppercase tracking-wide">Ideas shared publicly</p>
+        <p class="text-gray-600 text-sm leading-relaxed">I've appeared on several episodes of The Kin Show including a roundtable discussion with Kik Messenger Founder Ted Livingston and Sacred Finance CTO Will Gikandi.</p>
+      </div>
+      <p class="mt-4">
+        <a href="https://www.thekinshow.com/episodes/episode/7a90abe6/017-moving-forward-and-next-steps-ted-livingston-will-gikandi-and-andrew-mocol" class="inline-flex items-center text-primary font-semibold text-sm hover:underline no-underline">
+          Listen Now <span class="ml-1">&rarr;</span>
+        </a>
       </p>
     </div>
   </div>
+
 </section>

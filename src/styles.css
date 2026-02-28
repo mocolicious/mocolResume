@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@import "tailwindcss/theme" layer(theme);
-@import "tailwindcss/utilities" layer(utilities);
+@import "tailwindcss";
 
 @theme {
   --color-primary: #1976d2;
+  --color-primary-dark: #1565c0;
+  --color-primary-light: #42a5f5;
+  --font-sans: 'Roboto', 'Helvetica Neue', sans-serif;
 }
 
 html, body { height: 100%; }
